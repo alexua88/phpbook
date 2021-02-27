@@ -90,7 +90,7 @@
 
                             @isset($catalog->img)
 
-                                <img src="/{{ $catalog->img }}">
+                                <img src="/{{ $catalog->img }}"   width="150" height="250">
 
                             @endisset
 
@@ -110,7 +110,7 @@
                                 <h6 class="card-subtitle mb-2 text-muted">Автор:{{ $catalog->authors->pluck('title')->join(', ') }}</h6>
 
 
-                                <p class="card-text">{{ $catalog->text }}</p>
+                                <p class="card-text">{{ Str::limit($catalog->text, 120) }}</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
 
